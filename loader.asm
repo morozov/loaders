@@ -8,9 +8,9 @@ LD   DE,LD_BYTES
 LD   BC,#00AF
 LDIR
 
-LD   HL,#C419
-LD   DE,#FE8F
-LD   BC,#0064
+LD   HL,PATCH
+LD   DE,$FE8F
+LD   BC,LOAD-PATCH
 LDIR
 
 LD   HL,#FE75
@@ -28,7 +28,9 @@ SUB  A
 LD   (#FDED),A
 LD   (#FDFD),A
 LD   (#FE86),A
-JP   #C423
+JP LOAD
+
+PATCH:
 ADD  A,D
 XOR  C
 AND  #07
@@ -37,7 +39,7 @@ OUT  (#FE),A
 SCF
 RET
 
-; #C423
+LOAD:
 LD   IX,#9C40
 LD   DE,#0C91
 LD   A,#FF
