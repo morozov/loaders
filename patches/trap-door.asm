@@ -1,0 +1,9 @@
+LD   A,R
+RLCA
+RLA
+RLCA
+AND  #07
+OR   #08
+OUT  (#FE),A
+SCF
+RET

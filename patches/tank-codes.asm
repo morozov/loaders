@@ -1,0 +1,7 @@
+LD   A,R
+OUT  (#FE),A
+AND  #00
+OR   #08
+OUT  (#FE),A
+SCF
+RET

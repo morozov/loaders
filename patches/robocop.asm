@@ -1,0 +1,7 @@
+XOR  D
+NEG
+AND  #07
+OR   #08
+OUT  (#FE),A
+SCF
+RET

@@ -31,12 +31,7 @@ LD   (#FE86),A
 JP LOAD
 
 PATCH:
-ADD  A,D
-XOR  C
-AND  #07
-OR   #08
-OUT  (#FE),A
-SCF
+include patches/barbarian.asm
 RET
 
 LOAD:

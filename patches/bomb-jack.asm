@@ -1,0 +1,10 @@
+CPL
+INC  A
+XOR  #20
+AND  #27
+LD   C,A
+AND  #07
+OR   #08
+OUT  (#FE),A
+SCF
+RET

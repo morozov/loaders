@@ -1,0 +1,9 @@
+LD   A,(#FE9E)
+INC  A
+AND  #01
+LD   (#FE9E),A
+OR   #08
+OUT  (#FE),A
+SCF
+RET
+DEFB 0
