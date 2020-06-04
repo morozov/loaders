@@ -1,7 +1,7 @@
 LD   A,R
+AND  #07
 OUT  (#FE),A
-AND  #00
-OR   #08
+LD   A,#08
 OUT  (#FE),A
 SCF
 RET
