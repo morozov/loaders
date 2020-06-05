@@ -1,6 +1,15 @@
-boot.tap: src/boot.bas loader.tap screenz.tap
-	bas2tap -sLoaders -a10 src/boot.bas boot.tap
-	cat loader.tap screenz.tap >> boot.tap
+boot.tap: boot.bas screenz.tap
+	bas2tap -sLoaders -a10 boot.bas boot.tap
+	cat screenz.tap >> boot.tap
 
-loader.tap: src/loader.asm $(shell find src/patches/ -type f)
-	pasmo --tap src/loader.asm loader.tap
+boot.bas: src/boot.bas boot.bin
+# Replace the __LOADER__ placeholder with the machine codes with bytes represented as {XX}
+	sed "s/__LOADER__/$(shell hexdump -ve '1/1 "{%02x}"' boot.bin)/" src/boot.bas > boot.bas
+
+boot.bin: src/boot.asm
+	pasmo --bin src/boot.asm boot.bin
+
+clean:
+	rm -f \
+		*.bas \
+		*.bin
