@@ -31,7 +31,7 @@ LD   (#FE86),A
 JP LOAD
 
 PATCH:
-include patches/barbarian.asm
+include src/patches/barbarian.asm
 RET
 
 LOAD:
