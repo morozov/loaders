@@ -1,6 +1,6 @@
-boot.tap: boot.bas screenz.tap
+boot.tap: boot.bas data/screenz.tap
 	bas2tap -sLoaders -a10 boot.bas boot.tap
-	cat screenz.tap >> boot.tap
+	cat data/screenz.tap >> boot.tap
 
 boot.bas: src/boot.bas boot.bin
 # Replace the __LOADER__ placeholder with the machine codes with bytes represented as {XX}
