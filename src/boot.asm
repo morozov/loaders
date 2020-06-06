@@ -47,7 +47,7 @@ pc_pos:
     jr      load
 
 patch:
-    include src/patches/barbarian.asm
+    include __PATCH__
 endpatch:
 
 load:
