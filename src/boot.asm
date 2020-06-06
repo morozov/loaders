@@ -5,9 +5,10 @@ ATTR_P   equ $5c8d ; https://skoolkid.github.io/rom/asm/5C8D.html
 ld_bytes equ $fe00
 
 ; Clear the screen
-    xor     a
+    ld      a, $07
     ld      (ATTR_P), a
     ld      (BORDCR), a
+    xor     a
     out     ($fe), a
     call    CLS
 
@@ -51,10 +52,9 @@ patch:
 endpatch:
 
 load:
-    ld      ix, $9c40
-    ld      de, $0c91
+    ld      ix, $4000
+    ld      de, $1b00
     ld      a,  $ff
     scf
     call    ld_bytes
-    call    $9c40
     ret
