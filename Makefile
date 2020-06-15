@@ -1,4 +1,5 @@
-taps = tap/barbarian.tap \
+taps = tap/aliens.tap \
+    tap/barbarian.tap \
 	tap/bill-gilbert.tap \
 	tap/bomb-jack.tap \
 	tap/commando.tap \
