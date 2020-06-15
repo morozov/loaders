@@ -1,6 +1,7 @@
 taps = tap/barbarian.tap \
 	tap/bill-gilbert.tap \
 	tap/bomb-jack.tap \
+	tap/commando.tap \
 	tap/football.tap \
 	tap/robocop.tap \
 	tap/tank.tap \
