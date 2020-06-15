@@ -1,13 +1,5 @@
-taps = tap/aliens.tap \
-    tap/barbarian.tap \
-	tap/bill-gilbert.tap \
-	tap/bomb-jack.tap \
-	tap/commando.tap \
-	tap/football.tap \
-	tap/robocop.tap \
-	tap/tank.tap \
-	tap/tank-codes.tap \
-	tap/trap-door.tap
+patches := $(shell find src/patches -name \*.asm)
+taps    := $(addprefix tap/,$(addsuffix .tap,$(basename $(notdir $(patches)))))
 
 all: $(taps)
 
