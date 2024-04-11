@@ -6,7 +6,7 @@ all: $(taps)
 $(taps): tap/%.tap : boot.%.bas breath.tap
 # Create a temporary file first in order to make sure the target file
 # gets created only after the entire job has succeeded
-	$(eval TMPFILE=$(shell tempfile).tap)
+	$(eval TMPFILE=$(shell mktemp).tap)
 
 	bas2tap -sLoaders -a10 $< $(TMPFILE)
 	cat breath.tap >> $(TMPFILE)
